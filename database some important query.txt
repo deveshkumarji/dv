@@ -1,9 +1,10 @@
 create database Employee
 use Employee
+/*create a table*/
 create table empdetails(id int primary key identity,first_name varchar(30),
 last_name varchar(30),salary varchar(max),
 Department varchar(40),Gender varchar(40))
-/*create a table*/
+
 select*from empdetails
 insert into empdetails values('vikas','ahlawat','80000','Hr','male')
 
