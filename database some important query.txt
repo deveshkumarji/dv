@@ -1,0 +1,41 @@
+create database Employee
+use Employee
+create table empdetails(id int primary key identity,first_name varchar(30),
+last_name varchar(30),salary varchar(max),
+Department varchar(40),Gender varchar(40))
+/*create a table*/
+select*from empdetails
+insert into empdetails values('vikas','ahlawat','50000','Hr','male')
+
+insert into empdetails values('nikita','kumari','34000','it','female')
+insert into empdetails values('anita','jain','25000','hr','female')
+insert into empdetails values('nitin','jain','30000','hr','male')
+insert into empdetails values('ajay','kumar','45000','it','male')
+
+select id,first_name,last_name,salary,GETDATE() as joining_date,Department,Gender
+from empdetails
+
+SELECT * FROM empdetails WHERE First_Name like '%a_p%'
+SELECT * FROM empdetails WHERE Gender like '__le' --there are two "_"
+
+SELECT * FROM empdetails WHERE First_Name like 'a_____'   --there are four --
+
+--According to our table it would return 0 rows, because no name containg '%
+SELECT * FROM empdetails WHERE First_Name like 'nik%ta' 
+
+SELECT DISTINCT(First_Name) FROM empdetails
+--min salary query--
+SELECT Min(salary) as min_salary
+FROM empdetails 
+--max salary query--
+SELECT Max(salary) as highest_salary
+FROM empdetails 
+
+--ascending order query--
+SELECT * FROM empdetails
+ORDER BY salary asc;
+--descending order query--
+SELECT * FROM empdetails
+ORDER BY salary desc;
+
+
